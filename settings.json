@@ -1,0 +1,65 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "profiles": {
+      "architect": {
+        "name": "Architect",
+        "tools": {
+          "grep": true,
+          "list_directory": true,
+          "read_file": true,
+          "thinking": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {
+          "allpepper-memory-bank": {
+            "tools": {
+              "list_projects": true,
+              "list_project_files": true,
+              "memory_bank_read": true
+            }
+          },
+          "mcp-server-context7": {
+            "tools": {
+              "resolve-library-id": true,
+              "get-library-docs": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "icon_theme": "Catppuccin Macchiato",
+  "context_servers": {
+    "allpepper-memory-bank": {
+      "source": "custom",
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "@allpepper/memory-bank-mcp"],
+      "env": {
+        "MEMORY_BANK_ROOT": "PATH_HERE"
+      }
+    },
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Frappé"
+  }
+}
